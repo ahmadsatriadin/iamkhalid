@@ -1,0 +1,65 @@
+<html> 
+<head> 
+<link rel="icon" href="gambar/logo.png">
+<title>iamKhalid</title> 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css"></link> 
+</head> 
+
+
+<body> 
+<div class="menu">
+  <div class="menukiri"><a href="https://iamkhalid.xyz"><img src="gambar/logo.png" style="width:110px"></a></div>
+<div class="isimenu" style="color:#FFFFFF">
+<ul>
+<li><a href="index.php?page=download">Download</a></li>
+<li><a href="index.php?page=tentang">Tentang</a></li>
+<li><a href="index.php?page=publikasi">Publikasi</a></li>
+<li><a href="index.php?page=utama">Beranda</a></li>
+</ul>
+</div>
+</div>
+
+<div style="border: 1px solid #dfdede;">
+<img src="gambar/banner.jpg" style="width:100%" id="atas">
+</div>
+
+<div class="isi">
+
+<?php 
+	if(isset($_GET['page'])){
+		$page = $_GET['page'];
+ 
+		switch ($page) {
+			case 'utama':
+				include "konten/utama.php";
+				break;
+			case 'publikasi':
+				include "konten/belajarbahasatolaki.html";
+				break;
+			case 'tentang':
+				include "konten/tentang.html";
+				break;		
+			case 'download':
+				include "konten/download.php";
+				break;		
+			default:
+				echo "<center><h3>Maaf. Halaman tidak di temukan !</h3></center>";
+				break;
+		}
+	}
+	
+	else{
+		include "konten/utama.php";
+	}
+?>
+</div>
+
+<div class="footer">
+<a href="#atas">kembali ke atas</a><br>
+&copy; 2021<img src="gambar/logo.png" style="width:6%;">. <i>All rights Reserved</i>
+
+</div>
+
+</body> 
+</html>
